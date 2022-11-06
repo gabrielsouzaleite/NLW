@@ -7,17 +7,17 @@ async function main() {
     data: {
       name: 'John Doe',
       email: 'john.doe@gmail.com',
-      avatarUrl: 'https://github.com/gabrielsouzaleite.png',
+      avatarUrl: 'https://github.com/gabrielsouzaleite.png'
     }
   })
-  
+
   const pool = await prisma.pool.create({
     data: {
       title: 'Example Pool',
       code: 'BOL123',
       ownerId: user.id,
       participant: {
-        create:{
+        create: {
           userId: user.id
         }
       }
@@ -28,7 +28,7 @@ async function main() {
     data: {
       date: '2022-11-04T12:00:00.010Z',
       firstTeamCountryCode: 'DE',
-      secondTeamCountryCode: 'BR',
+      secondTeamCountryCode: 'BR'
     }
   })
 
@@ -43,9 +43,9 @@ async function main() {
           secondTeamPoints: 1,
           participant: {
             connect: {
-              userId_poolId:{
+              userId_poolId: {
                 userId: user.id,
-                poolId: pool.id, 
+                poolId: pool.id
               }
             }
           }
